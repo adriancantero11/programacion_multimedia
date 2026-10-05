@@ -1,20 +1,18 @@
 package com.example.ejemploestados;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    // On create es cuando se crea la activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-// Asignamos un Layout a la activity
         setContentView(R.layout.activity_main);
 
-// Escribimos en el Logcat
         Log.i("Ejemplo", "Estoy en onCreate");
     }
 
@@ -51,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
         Log.i("Ejemplo", "Estoy en onDestroy");
+
+        Intent ejemplo= new Intent(this, MainActivity2.class);
+        startActivity(ejemplo);
     }
 }
